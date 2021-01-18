@@ -1,70 +1,68 @@
-# Getting Started with Create React App
+# Pupster App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+In this activity we will work to create an entire React application from scratch, complete with routing and AJAX requests to the [Dog Ceo API](https://dog.ceo/dog-api/): an API for dog images.
 
-## Available Scripts
+## Instructions
 
-In the project directory, you can run:
+* Start by scaffolding out a new starter React app by running the following command in your terminal `npx create-react-app pupster`.
 
-### `npm start`
+* cd into the `pupster` directory and run the following command to install React Router, Axios, and Bootstrap:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+  ```
+  npm install axios react-router-dom bootstrap
+  ```
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+* This activity uses Bootstrap, so make sure you `import 'bootstrap/dist/css/bootstrap.min.css';` in `index.js`
 
-### `npm test`
+* **Recommended:** Add the Font Awesome CDNs to your application's `index.html` file:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+  ```html
+  <link
+    href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    rel="stylesheet"
+  />
+  ```
+  
+* Open [https://pupster.netlify.com/](https://pupster.netlify.com/) in your web browser and take a few moments to study the example application. You will be basing your Pupster app off of this example.
 
-### `npm run build`
+  * This example contains 3 routes:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+    1. `/about`: A static welcome screen for visitors to the application.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+    2. `/discover`: This page displays a photo of a random dog retrieved from the [Dog Ceo API](https://dog.ceo/dog-api/). This page contains 2 clickable buttons: one for passing or "thumbs-downing" a dog, and one for picking or "thumbs-upping" a dog. When either button is clicked, a new dog image is loaded from the API. If you "thumbs up" a dog, there is a 1 in 5 chance that the dog likes you too, and the friends count goes up by 1.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+    3. `/search`: This page allows you to search the [Dog Ceo API](https://dog.ceo/dog-api/) for all dogs by breed. After a search is made, a list of all of the results appears underneath.
 
-### `npm run eject`
+* Your Pupster app should implement each of these three pages and their basic functionality, **don't spend much time styling your app until you have completed everything else.**
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Your Pupster app should display a navigation bar that is present on every route.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+* Begin with routing. For each route, render a different component for each page without worrying about building in any behaviors yet. Then work on implementing the most basic functionality for each page, one piece at a time.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### Bonus
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+* Once you complete all of the basic functionality for this activity, work on adding additional styles and making it look great.
 
-## Learn More
+### Hints
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+* Don't worry about styling or making things fancy at first. Just use Bootstrap classes and get the basic functionality for each page working. Get the app to work first, then come back and make it awesome.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+* Use the <https://dog.ceo/api/breeds/image/random> endpoint to get a random dog image.
 
-### Code Splitting
+* Use the <https://dog.ceo/api/breed/hound/images> endpoint (replace "hound" with your breed of choice) endpoint to get an array of all available dog images of the selected breed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+* See <https://dog.ceo/api/breeds/list> for a list of all available dog breeds. You can test the `/search` page by searching for any of the breeds returned by this endpoint.
 
-### Analyzing the Bundle Size
+* Don't hesitate to refer back to the earlier examples from today.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+* Utilize documentation if you're still unsure about how anything works: 
 
-### Making a Progressive Web App
+  * [Axios](https://github.com/mzabriskie/axios)
+  
+  * [React Router](https://reacttraining.com/react-router/web/guides/philosophy)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+  * [React](https://facebook.github.io/react/docs/hello-world.html)
 
-### Advanced Configuration
+  * [Dog Ceo](https://dog.ceo/dog-api/)
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+* Ask for help if you get stuck!
